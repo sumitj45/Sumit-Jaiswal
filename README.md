@@ -23,64 +23,11 @@ text: PropTypes.string.isRequired,
 
 Optimized code given below:
 
-import React, { useState } from "react";
-import PropTypes from "prop-types";
 
-// Single List Item
-const SingleListItem = ({ index, isSelected, onClickHandler, text }) => {
-return (
-<li
-style={{ backgroundColor: isSelected ? "red" : "green" }}
-onClick={() => onClickHandler(index)}
->
-{text}
+<h1> https://github.com/sumitj45/Sumit-Jaiswal_Frontend/blob/master/assingment/src/List.jsx </h1>
 
-);
-};
 
-SingleListItem.propTypes = {
-index: PropTypes.number,
-isSelected: PropTypes.bool,
-onClickHandler: PropTypes.func.isRequired,
-text: PropTypes.string.isRequired,
-};
 
-// List Component
-const List = ({ items }) => {
-const [selectedIndex, setSelectedIndex] = useState(null);
-
-const handleClick = (index) => {
-setSelectedIndex(index);
-console.log(" index : " + index);
-};
-
-return (
-
-{items.map((item, index) => (
-<SingleListItem
-onClickHandler={handleClick}
-text={item.text}
-index={index}
-isSelected={selectedIndex === index}
-key={index}
-/>
-))}
-
-);
-};
-List.propTypes = {
-items: PropTypes.arrayOf(
-PropTypes.shape({
-text: PropTypes.string.isRequired,
-})
-),
-};
-
-List.defaultProps = {
-items: [{ text: "Item1" }, { text: "Item2" }],
-};
-
-export default List;
 
   <h3>points :</h3>
 1.The memo function is used to memoize the SingleListItem and WrappedListComponent components. However, since the SingleListItem component is very simple and does not have any state or props that change frequently, it is not necessary to memoize it. Removing the memo function from SingleListItem can improve performance.
