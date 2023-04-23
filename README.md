@@ -1,6 +1,7 @@
 # SteelEye Assingment 
 
 **1.Explain what the simple List component does.**
+
 Ans-A common graphical user interface element in software programmes and websites for displaying a list of related items is the simple List component. It is a fundamental UI element that enables programmers to present a set of data in a structured and user-friendly manner.
 
 A simple List component typically consists of a layout of rows, one row per item from the list, either vertically or horizontally. Text, images, or icons can all be used to display different types of data for each item on the list.
@@ -81,8 +82,9 @@ items: [{ text: "Item1" }, { text: "Item2" }],
 
 export default List;
 
-**points :**
-The memo function is used to memoize the SingleListItem and WrappedListComponent components. However, since the SingleListItem component is very simple and does not have any state or props that change frequently, it is not necessary to memoize it. Removing the memo function from SingleListItem can improve performance.
-The useEffect hook is used to set the initial state of selectedIndex when the items prop changes. However, since selectedIndex is not used until the user clicks on a list item, it is not necessary to set the initial state in this way. Instead, we can initialize selectedIndex to null and update it only when the user clicks on a list item.
+  <h2>**points :**</h2>
+1.The memo function is used to memoize the SingleListItem and WrappedListComponent components. However, since the SingleListItem component is very simple and does not have any state or props that change frequently, it is not necessary to memoize it. Removing the memo function from SingleListItem can improve performance.
 
-3.3. The handleClick function can be simplified by directly by passing the index of the clicked item to setSelectedIndex
+2.The useEffect hook is used to set the initial state of selectedIndex when the items prop changes. However, since selectedIndex is not used until the user clicks on a list item, it is not necessary to set the initial state in this way. Instead, we can initialize selectedIndex to null and update it only when the user clicks on a list item.
+
+3 The handleClick function can be simplified by directly by passing the index of the clicked item to setSelectedIndex
