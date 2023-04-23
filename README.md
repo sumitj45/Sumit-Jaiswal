@@ -1,12 +1,12 @@
 # SteelEye Assingment 
 
-**1.Explain what the simple List component does.**
+<h2>1.Explain what the simple List component does.</h2>
 
 Ans-A common graphical user interface element in software programmes and websites for displaying a list of related items is the simple List component. It is a fundamental UI element that enables programmers to present a set of data in a structured and user-friendly manner.
 
 A simple List component typically consists of a layout of rows, one row per item from the list, either vertically or horizontally. Text, images, or icons can all be used to display different types of data for each item on the list.
 
-**2.What problems / warnings are there with code?**
+<h2>2.What problems / warnings are there with code?</h2>
 
 1.The setSelectedIndex and selectedIndex variables are reversed in the WrappedListComponent component. setSelectedIndex should come first, followed by selectedIndex.
 
@@ -19,7 +19,7 @@ PropTypes.shape({
 text: PropTypes.string.isRequired,
 })
 
-**3.Please fix, optimize, and/or modify the component as much as you think is necessary.**
+<h2>3.Please fix, optimize, and/or modify the component as much as you think is necessary.</h2>
 
 Optimized code given below:
 
@@ -82,7 +82,7 @@ items: [{ text: "Item1" }, { text: "Item2" }],
 
 export default List;
 
-  <h2>**points :**</h2>
+  <h3>points :</h3>
 1.The memo function is used to memoize the SingleListItem and WrappedListComponent components. However, since the SingleListItem component is very simple and does not have any state or props that change frequently, it is not necessary to memoize it. Removing the memo function from SingleListItem can improve performance.
 
 2.The useEffect hook is used to set the initial state of selectedIndex when the items prop changes. However, since selectedIndex is not used until the user clicks on a list item, it is not necessary to set the initial state in this way. Instead, we can initialize selectedIndex to null and update it only when the user clicks on a list item.
